@@ -20,7 +20,8 @@ function addStyle(css) {
 }
 
 // change font style in messages
-addStyle('.messageText { font-family: sans-serif !important; }');
+//addStyle('.messageText { font-family: sans-serif !important; }');
+addStyle('* { font-family: sans-serif !important; }');
 
 // reduce the min-height of messages to gain some vertical space in the case of small messages.
 // or you can get the size of .messageUserInfo and use that value as the min-height for messages, though the former might not always have a fixed height for all users.
