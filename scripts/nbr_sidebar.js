@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         NBR_sidebar
-// @version      1.2
+// @name         nbr_sidebar.js
+// @version      1.3
 // @description  show hide side menu on http://forum.notebookreview.com
 // @author       katalin_2003
 // @include      http://forum.notebookreview.com/*
