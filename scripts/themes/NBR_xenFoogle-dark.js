@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         nbr_dark-theme.js
 // @author       katalin_2003
-// @version      0.3.1
+// @version      0.3.3
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/themes/NBR_xenFoogle-dark.js
 // @description  theme script for http://forum.notebookreview.com/ based on the NBR_xenFoogle theme
 // @include      http://forum.notebookreview.com/*
@@ -96,10 +96,11 @@ addGlobalStyle('div.nodeInfo.categoryNodeInfo.categoryStrip { background-color: 
 addGlobalStyle('#waindigoCopyrightNotice>div.pageContent>span.muted { color: #FFFFFF; }');
 addGlobalStyle('div#copyright { color: #FFFFFF; }');
 
-
 // Latest thread container styles
 addGlobalStyle('.node .nodeLastPost { background-color: #EEEEEE; }');
 addGlobalStyle('span.lastThreadMeta abbr.DateTime, span.lastThreadMeta span.DateTime { color: #000000; }');
+// No content message
+addGlobalStyle('span.noMessages { color: #000000; }');
 
 
 // change header logo and link to point to the forum's home page
