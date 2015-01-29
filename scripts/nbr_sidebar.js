@@ -96,3 +96,10 @@ sidebarToggle.onclick = function () {
     toggle('sidebar');
     return false;
 }
+
+// remove "Latest" string in front of thread titles
+addStyle('span.lastThreadTitle > span { display:none; }');
+// increase the width of the element containig the latest thread in a sub forum
+addStyle('.node .nodeLastPost { width: 30%; }');
+// push the nodeControl icons (RSS etc..) to the left to compensate
+addStyle('.node .nodeControls { right: 32%; }');
