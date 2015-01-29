@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         nbr_sidebar.js
 // @version      1.4
+// @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/nbr_sidebar.js
 // @description  show hide side menu on http://forum.notebookreview.com
 // @author       katalin_2003
 // @include      http://forum.notebookreview.com/*
-// @match        http://forum.notebookreview.com/
 // @grant        none
 // ==/UserScript==
 
