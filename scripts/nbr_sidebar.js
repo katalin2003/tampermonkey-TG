@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         NBR_sidebar
-// @version      1.0
-// @description  show hide side menu on http://forum.notebookreview.com
+// @name         TPCR_sidebar
+// @version      1.2
+// @description  show hide side menu on http://forum.tabletpcreview.com
 // @author       katalin_2003
 // @include      http://forum.notebookreview.com/*
 // @match        http://forum.notebookreview.com/
@@ -38,44 +38,45 @@ function insertAfter(referenceNode, newNode) {
 function toggle(obj) {
     //  var el = document.getElementById(obj);
     var el = document.getElementsByClassName(obj)[0],
-          mainContent = document.getElementsByClassName('mainContent')[0];
+        mainContent = document.getElementsByClassName('mainContent')[0];
     if ( el.style.display != 'none' ) {
         el.style.display = 'none';
         sideTgl.innerHTML = '<<';
         mainContent.style.width = '100%';
-    
-    var	elWidth = el.offsetWidth,
-        mainContentWidth = mainContent.offsetWidth;
+        
+        var elWidth = el.offsetWidth,
+            mainContentWidth = mainContent.offsetWidth;
         console.log('katalin_2003: sidebar hidden');
         console.log('katalin_2003: mainContent width is: ' + mainContentWidth + 'px');
     }
     else {
         el.style.display = '';
         sideTgl.innerHTML = '>>';
-    
-    var elWidth = el.offsetWidth,
-          mainContentWidth = mainContent.offsetWidth;
-          mainContent.style.width = (mainContentWidth - elWidth-10) +'px';
-    
+        
+        var elWidth = el.offsetWidth,
+            mainContentWidth = mainContent.offsetWidth;
+        mainContent.style.width = (mainContentWidth - elWidth-10) +'px';
+        
         console.log('katalin_2003: sidebar visible');
         console.log('katalin_2003: mainContent width is: ' + (mainContentWidth-elWidth-10) + 'px');
     }
 }
 
 var sideTgl = document.createElement('div');
-       sideTgl.setAttribute('id', "sidebarToggle");
-       sideTgl.style.cssFloat = 'right';
-       sideTgl.style.color = '#000000';
+sideTgl.setAttribute('id', "sidebarToggle");
+sideTgl.style.cssFloat = 'right';
+sideTgl.style.color = '#000000';
 
 sideTgl.innerHTML = ">>";
-var div = document.getElementsByClassName("blockLinksList")[0];
+//var div = document.getElementsByClassName("blockLinksList")[0];
+var div = document.getElementsByClassName("breadBoxTop")[0];
 insertAfter(div, sideTgl);
 
 addStyle('div#sidebarToggle { border: 1px solid #7B7B7B; }');
 addStyle('div#sidebarToggle { border-radius: 2px; }');
 addStyle('div#sidebarToggle { padding: 1px 10px; }');
 addStyle('div#sidebarToggle { margin-top: 3px; }');
-addStyle('div#sidebarToggle { margin-right: 20px; }');
+//addStyle('div#sidebarToggle { margin-right: 20px; }');
 addStyle('div#sidebarToggle:hover { cursor: pointer; }');
 addStyle('div#sidebarToggle:hover { background-color: #F0F0F0; }');
 
@@ -86,7 +87,7 @@ sidebarToggle.setAttribute('title' , 'Toggle sidebar visibility');
 (function() {
     toggle('sidebar');
     console.log('hidden');
-    return false;
+    return false;  
 })();
 
 // Toggle sidebar's visibility on click
