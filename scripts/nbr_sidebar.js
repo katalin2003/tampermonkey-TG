@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         NBR_sidebar
-// @version       1.0
+// @version      1.0
 // @description  show hide side menu on http://forum.notebookreview.com
-// @author        katalin_2003
-// @include        http://forum.notebookreview.com/*
-// @match         http://forum.notebookreview.com/
-// @grant          none
+// @author       katalin_2003
+// @include      http://forum.notebookreview.com/*
+// @match        http://forum.notebookreview.com/
+// @grant        none
 // ==/UserScript==
 
 // Let's make it easier to add global styles
