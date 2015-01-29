@@ -126,6 +126,11 @@ addGlobalStyle('.sidebar .avatarList .userTitle { color: #FFFFFF; }');
 addGlobalStyle('p#pageDescription>a.username { color: #4D96BA; }');
 addGlobalStyle('p#pageDescription>a.username:hover { color: #96291E; }');
 
+// Likes popup style
+addGlobalStyle('.message .likesSummary { background: none !important; border: 1px solid #008000; border-radius: 0 !important; display: block; }');
+// Moderator banner
+addGlobalStyle('.userBanner.bannerRed { background: #008000; border: 1px solid #008000; border-radius: 0 !important; }');
+
 // message list
 addGlobalStyle('#messageList .message, .message .messageInfo { background-color: #2C2C2C; color: #FFFFFF; }');
 // remove the "triangle next to posts"
