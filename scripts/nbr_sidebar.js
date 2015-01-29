@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         nbr_sidebar.js
-// @version      1.3
+// @version      1.4
 // @description  show hide side menu on http://forum.notebookreview.com
 // @author       katalin_2003
 // @include      http://forum.notebookreview.com/*
@@ -103,3 +103,5 @@ addStyle('span.lastThreadTitle > span { display:none; }');
 addStyle('.node .nodeLastPost { width: 30%; }');
 // push the nodeControl icons (RSS etc..) to the left to compensate
 addStyle('.node .nodeControls { right: 32%; }');
+// make quote blocks fit nicely in the message block
+addStyle('.bbCodeBlock { margin: 1em 0 1em 0; }');
