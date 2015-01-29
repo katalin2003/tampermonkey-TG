@@ -1,22 +1,22 @@
 // ==UserScript==
-// @name			NBR_sidebar
-// @version		1.0
-// @description	show hide side menu on http://forum.notebookreview.com
-// @author			katalin_2003
-// @include		http://forum.notebookreview.com/*
-// @match			http://forum.notebookreview.com/
-// @grant			none
+// @name         NBR_sidebar
+// @version       1.0
+// @description  show hide side menu on http://forum.notebookreview.com
+// @author        katalin_2003
+// @include        http://forum.notebookreview.com/*
+// @match         http://forum.notebookreview.com/
+// @grant          none
 // ==/UserScript==
 
 // Let's make it easier to add global styles
 function addStyle(css) {
-	var head, style;
-	head = document.getElementsByTagName('head')[0];
-	if (!head) { return; }
-	style = document.createElement('style');
-	style.type = 'text/css';
-	style.innerHTML = css;
-	head.appendChild(style);
+    var head, style;
+    head = document.getElementsByTagName('head')[0];
+    if (!head) { return; }
+    style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = css;
+    head.appendChild(style);
 }
 
 // change font style in messages
@@ -31,41 +31,41 @@ addStyle('ol#forums { border-right: 1px solid #7B7B7B !important; }');
 addStyle('div.sectionMain { border-right: 1px solid #7B7B7B !important; }');
 
 function insertAfter(referenceNode, newNode) {
-	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
 // Toggle visibility function
 function toggle(obj) {
-	//  var el = document.getElementById(obj);
-	var el = document.getElementsByClassName(obj)[0],
-		mainContent = document.getElementsByClassName('mainContent')[0];
-	if ( el.style.display != 'none' ) {
-		el.style.display = 'none';
-		sideTgl.innerHTML = '<<';
-		mainContent.style.width = '100%';
-		
-		var	elWidth = el.offsetWidth,
-				mainContentWidth = mainContent.offsetWidth;
-				console.log('katalin_2003: sidebar hidden');
-				console.log('katalin_2003: mainContent width is: ' + mainContentWidth + 'px');
-	}
-	else {
-		el.style.display = '';
-		sideTgl.innerHTML = '>>';
-		
-		var	elWidth = el.offsetWidth,
-				mainContentWidth = mainContent.offsetWidth;
-				mainContent.style.width = (mainContentWidth - elWidth-10) +'px';
-		
-		console.log('katalin_2003: sidebar visible');
-		console.log('katalin_2003: mainContent width is: ' + (mainContentWidth-elWidth-10) + 'px');
-	}
+    //  var el = document.getElementById(obj);
+    var el = document.getElementsByClassName(obj)[0],
+          mainContent = document.getElementsByClassName('mainContent')[0];
+    if ( el.style.display != 'none' ) {
+        el.style.display = 'none';
+        sideTgl.innerHTML = '<<';
+        mainContent.style.width = '100%';
+    
+    var	elWidth = el.offsetWidth,
+        mainContentWidth = mainContent.offsetWidth;
+        console.log('katalin_2003: sidebar hidden');
+        console.log('katalin_2003: mainContent width is: ' + mainContentWidth + 'px');
+    }
+    else {
+        el.style.display = '';
+        sideTgl.innerHTML = '>>';
+    
+    var elWidth = el.offsetWidth,
+          mainContentWidth = mainContent.offsetWidth;
+          mainContent.style.width = (mainContentWidth - elWidth-10) +'px';
+    
+        console.log('katalin_2003: sidebar visible');
+        console.log('katalin_2003: mainContent width is: ' + (mainContentWidth-elWidth-10) + 'px');
+    }
 }
 
 var sideTgl = document.createElement('div');
-sideTgl.setAttribute('id', "sidebarToggle");
-sideTgl.style.cssFloat = 'right';
-sideTgl.style.color = '#000000';
+       sideTgl.setAttribute('id', "sidebarToggle");
+       sideTgl.style.cssFloat = 'right';
+       sideTgl.style.color = '#000000';
 
 sideTgl.innerHTML = ">>";
 var div = document.getElementsByClassName("blockLinksList")[0];
@@ -84,13 +84,13 @@ sidebarToggle.setAttribute('title' , 'Toggle sidebar visibility');
 
 // Hide the sidebar by default
 (function() {
-	toggle('sidebar');
-	console.log('hidden');
-	return false;  
+    toggle('sidebar');
+    console.log('hidden');
+    return false;
 })();
 
 // Toggle sidebar's visibility on click
 sidebarToggle.onclick = function () {
-	toggle('sidebar');
-	return false;
+    toggle('sidebar');
+    return false;
 }
