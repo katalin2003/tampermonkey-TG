@@ -66,7 +66,7 @@ function toggle(obj) {
 var sideTgl = document.createElement('div');
 sideTgl.setAttribute('id', "sidebarToggle");
 sideTgl.style.cssFloat = 'right';
-sideTgl.style.color = '#000000';
+//sideTgl.style.color = '#000000';
 
 sideTgl.innerHTML = ">>";
 //var div = document.getElementsByClassName("blockLinksList")[0];
