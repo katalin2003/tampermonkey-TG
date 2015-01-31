@@ -10,4 +10,4 @@
 
 * ####[NBR_xenFoogle-dark.js](https://github.com/katalin2003/tampermonkey-TG/blob/master/scripts/themes/NBR_xenFoogle-dark.js):
 **a dark theme for http://notebookreview.com based on the NBR_xenFoogle theme**
- * **WARNING**: still in early stage so you'll definitely won't want to use it yet but check back soon. Or if you want to help me improve it, fork it and submit pull requests.
+ * **WARNING**: still in early stage so you'll definitely won't want to use it yet but check back soon. Or if you want to help me improve it, fork it and submit pull requests
