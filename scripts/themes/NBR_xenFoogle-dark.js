@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         nbr_dark-theme.js
 // @author       katalin_2003
-// @version      0.3.5
+// @version      0.3.6
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/themes/NBR_xenFoogle-dark.js
 // @description  theme script for http://forum.notebookreview.com/ based on the NBR_xenFoogle theme
 // @include      http://forum.notebookreview.com/*
@@ -31,7 +31,7 @@ function addGlobalStyle(css) {
 addGlobalStyle('html { background: url("http://www.vbstyles.com/vbstyles_images/header-bg.png") repeat scroll !important; }');
 addGlobalStyle('div.navTabs { background: '+ dG +'; border-bottom: 3px solid '+ lG +'; }');	//#1F5263
 // Text color
-addGlobalStyle('.navTabs .navTab.selected .navLink, .navTabs .navTab.PopupClosed .navLink, .navTabs .navTab.PopupClosed .navLink:hover, .navTabs .navTab.PopupOpen .navLink, .navTabs .navTab.PopupOpen .navLink:hover { color: '+ lG +' !important; }');
+addGlobalStyle('.navTabs .navTab.selected .navLink, .navTabs .navTab.PopupClosed .navLink, .navTabs .navTab.PopupClosed .navLink:hover, .navTabs .navTab.PopupOpen .navLink, .navTabs .navTab.PopupOpen .navLink:hover, .nodeList .categoryStrip .nodeTitle a { color: '+ lG +' !important; }');
 //addGlobalStyle('li.navTab a:hover { color: '+ lG +' !important; }');
 // active navTab
 // addGlobalStyle('.navTabs .navTab.selected .navLink { border-bottom: 3px solid #000000 !important; }');
@@ -50,7 +50,7 @@ addGlobalStyle('div#content .pageContent { background: url("http://www.vbstyles.
 addGlobalStyle('div.tabLinks.forumsTabLinks { border: 0px !important; }');
 addGlobalStyle('ul.blockLinksList { margin-left: 0px !important; }');
 addGlobalStyle('ol#forums { background-color: #000000 !important; border: 0 !important; padding: 1px !important; }');
-addGlobalStyle('fieldset.breadcrumb { background: #688A9D; border: 1px solid #000000 !important; }');
+addGlobalStyle('fieldset.breadcrumb { background: '+ dG +'; border: 0; border-bottom: 3px solid '+ lG +'; }');
 
 // login bar border #loginBar
 addGlobalStyle('div#loginBar { border: 0px !important; }');
@@ -64,16 +64,16 @@ addGlobalStyle('.navTabs .navTab.selected .tabLinks a:hover, .navTabs .navTab.se
 
 // breadcrumbs navigation
 addGlobalStyle('span.arrow { background: rgba(0, 0, 0, 0) url("styles/xenfoogle/xenforo/xenforo-ui-sprite.png") no-repeat -140px 0.1px !important; transform:rotate(270deg) !important; }');
-addGlobalStyle('.crust:first-child>a.crumb { color: #FFFFFF !important; }');
-addGlobalStyle('.crust>a.crumb { color: #FFFFFF !important; }');
-addGlobalStyle('.crust:last-child>a.crumb { color: #FFFFFF !important; }'); //#2C8DAE
+addGlobalStyle('.crust:first-child>a.crumb, .crust>a.crumb, .crust:last-child>a.crumb { color: '+ lG +' !important; }');
+//addGlobalStyle('.crust>a.crumb { color: #FFFFFF !important; }');
+//addGlobalStyle('.crust:last-child>a.crumb { color: #FFFFFF !important; }'); //#2C8DAE
 
 // search input and buttons
 addGlobalStyle('input#QuickSearchQuery { background-color: '+ dG +' !important; }');
 addGlobalStyle('input#QuickSearchQuery:focus { background-image: none !important; }');
-addGlobalStyle('input[value="Search"] { background-color: #96291E !important; border: 1px solid #96291E !important; }');
-addGlobalStyle('a.moreOptions { background-color: #96291E !important; border: 1px solid #96291E !important; }');
-addGlobalStyle('a.NoPopupGadget { background-color: #96291E !important; border: 1px solid #96291E !important; }');
+// Button style & {{username}}, Inbox, Alerts
+addGlobalStyle('.button, .button.primary, a.moreOptions { background-color: '+ lG +'; border: 1px solid '+ lG +'; }');
+//addGlobalStyle('a.NoPopupGadget { background-color: #96291E !important; border: 1px solid #96291E !important; }');
 
 // page description
 addGlobalStyle('p#pageDescription { color: #777C80 !important; }');
@@ -91,6 +91,8 @@ addGlobalStyle('a.feedIcon { background: url("http://creativity-online.com/asset
 
 // forum list background-color
 addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent { background-color: '+ dG +' !important; color: #FFFFFF !important; }');
+// border between subforums in the list
+addGlobalStyle('.nodeList .categoryForumNodeInfo, .nodeList .forumNodeInfo, .nodeList .pageNodeInfo, .nodeList .linkNodeInfo { border-bottom: 3px solid '+ bK +'; }');
 
 // change hover color for each forum in the list
 addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent:hover { background-color: #96291E !important; }');
@@ -108,20 +110,20 @@ addGlobalStyle('#sidebarToggle { color: #278DAE; }');
 
 // Styles for linked forums (e.g. NBR Marketplace)
 addGlobalStyle('div.nodeInfo.linkNodeInfo { background-color: '+ dG +' !important;}');
-addGlobalStyle('div.nodeInfo.linkNodeInfo>div>h3>a { color: #FFFFFF !important; }');
+addGlobalStyle('div.nodeInfo.linkNodeInfo>div>h3>a { color: '+ lG +'; }');
 
 // text color under linked forums, latest threads etc..
-addGlobalStyle('body .muted, body a.muted, body .muted a { color: #FFFFFF; }');
+addGlobalStyle('body .muted, body a.muted, body .muted a { color: '+ gG +'; }');
 
 // forum category title background ("Hardware, Software and Accessories", "Notebook Manufacturers" etc..)
-addGlobalStyle('div.nodeInfo.categoryNodeInfo.categoryStrip { background-color: #688A9D !important; }'); //#1F5263
+addGlobalStyle('div.nodeInfo.categoryNodeInfo.categoryStrip { background-color: '+ dG +'; border-radius: 0; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom: 3px solid '+ lG +';}'); //#1F5263
 
 // bottom copyright text
 addGlobalStyle('#waindigoCopyrightNotice>div.pageContent>span.muted { color: #FFFFFF; }');
 addGlobalStyle('div#copyright { color: #FFFFFF; }');
 
 // Latest thread container styles
-addGlobalStyle('.node .nodeLastPost { background-color: '+ bK +'; }');
+addGlobalStyle('.node .nodeLastPost { background-color: '+ bK +'; border: 1px solid '+ bK +';}');
 addGlobalStyle('span.lastThreadMeta abbr.DateTime, span.lastThreadMeta span.DateTime { color: '+ gG +'; }');
 // No content message
 addGlobalStyle('span.noMessages { color: '+ bK +'; }');
@@ -177,7 +179,7 @@ addGlobalStyle('form#QuickReply { margin-left: 0; }');
 
 
 /*var uzr = document.getElementsByClassName("accountUsername")[0];
-    uzr.innerHTML = "Catalin!";
+    uzr.innerHTML = "userImg!";
     console.log(uzr);*/
 
 
