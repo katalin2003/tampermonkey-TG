@@ -176,9 +176,9 @@ addGlobalStyle('form#QuickReply { margin-left: 0; }');
 
 
 
-var uzr = document.getElementsByClassName("accountUsername")[0];
+/*var uzr = document.getElementsByClassName("accountUsername")[0];
     uzr.innerHTML = "Catalin!";
-    console.log(uzr);
+    console.log(uzr);*/
 
 
 
