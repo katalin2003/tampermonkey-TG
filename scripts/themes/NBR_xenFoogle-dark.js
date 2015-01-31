@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         nbr_dark-theme.js
 // @author       katalin_2003
-// @version      0.3.6
+// @version      0.3.7
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/themes/NBR_xenFoogle-dark.js
 // @description  theme script for http://forum.notebookreview.com/ based on the NBR_xenFoogle theme
 // @include      http://forum.notebookreview.com/*
@@ -168,6 +168,13 @@ addGlobalStyle('.messageUserBlock .arrow { display: none; }');
 // message styles
 //addGlobalStyle('.message .messageInfo { background-color: '+ dG +'; color: #F80000; }');
 
+// Quoted messages
+addGlobalStyle('.bbCodeQuote .quoteContainer { background: '+ bK +'; border-radius: 0; }');
+addGlobalStyle('.bbCodeBlock { background: '+ bK +'; border-radius: 0; border: 0; border-left: 3px solid '+ lG +';}');
+// Quoted member
+addGlobalStyle('.bbCodeQuote .attribution { color: '+ wW +'; background: none; border: 0; }');
+// Remove the annoying gradient applied to large quoted messages
+addGlobalStyle('.bbCodeQuote .quoteContainer .quoteExpand { background: none; color: '+ lG +';}');
 
 
 // hide user's avatar next to the reply area.
