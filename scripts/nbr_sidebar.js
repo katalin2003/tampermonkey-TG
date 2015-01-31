@@ -21,8 +21,8 @@ function addStyle(css) {
     head.appendChild(style);
 }
 
-// change font style in messages
-//addStyle('.messageText { font-family: sans-serif !important; }');
+// change font family
+// Yeah, I know this is evil but still better than serif text.
 addStyle('* { font-family: sans-serif !important; }');
 
 // reduce the min-height of messages to gain some vertical space in the case of small messages.
