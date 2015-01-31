@@ -1,12 +1,21 @@
 // ==UserScript==
 // @name         nbr_dark-theme.js
 // @author       katalin_2003
-// @version      0.3.3
+// @version      0.3.5
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/themes/NBR_xenFoogle-dark.js
 // @description  theme script for http://forum.notebookreview.com/ based on the NBR_xenFoogle theme
 // @include      http://forum.notebookreview.com/*
 // @grant        none
 // ==/UserScript==
+
+// colors
+var wW = '#FFFFFF'; // white
+var lG = '#2DBE2D'; // light green - #94CA18
+var dG = '#2C2C2C';	// dark gray - #2C2C2C
+var gG = '#888888'; // gray
+var bK = '#000000'; // black
+
+
 
 function addGlobalStyle(css) {
     var head, style;
@@ -20,12 +29,27 @@ function addGlobalStyle(css) {
 
 // Top nav bar
 addGlobalStyle('html { background: url("http://www.vbstyles.com/vbstyles_images/header-bg.png") repeat scroll !important; }');
-addGlobalStyle('div.navTabs { background: #688A9D; }');	//#1F5263
-addGlobalStyle('a.navLink:hover { background-color: #96291E !important; }');
-addGlobalStyle('div.pageContent { background: url("http://www.vbstyles.com/vbstyles_images/header-bg.png") repeat scroll !important; color: #FFFFFF !important; border: 0px !important; padding-right: 0px !important; padding-left: 0px !important; }');
+addGlobalStyle('div.navTabs { background: '+ dG +'; border-bottom: 3px solid '+ lG +'; }');	//#1F5263
+// Text color
+addGlobalStyle('.navTabs .navTab.selected .navLink, .navTabs .navTab.PopupClosed .navLink, .navTabs .navTab.PopupClosed .navLink:hover, .navTabs .navTab.PopupOpen .navLink, .navTabs .navTab.PopupOpen .navLink:hover { color: '+ lG +' !important; }');
+//addGlobalStyle('li.navTab a:hover { color: '+ lG +' !important; }');
+// active navTab
+// addGlobalStyle('.navTabs .navTab.selected .navLink { border-bottom: 3px solid #000000 !important; }');
+
+// Content menu
+addGlobalStyle('.Menu { border: 0; border-top: 3px solid '+ lG +'; box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5); }');
+addGlobalStyle('.Menu .primaryContent, .Menu .secondaryContent { background: '+ dG +';}');
+// Content menu header
+addGlobalStyle('.Menu .menuHeader h3 { color: '+ wW +'; }');
+// Content menu sub title
+addGlobalStyle('.Menu .menuHeader .muted { color: '+ gG +'; }');
+
+
+addGlobalStyle('a.navLink:hover { background-color: #000000 !important; }');  // #96291E
+addGlobalStyle('div#content .pageContent { background: url("http://www.vbstyles.com/vbstyles_images/header-bg.png") repeat scroll !important; color: '+ lG +' !important; border: 0px !important; padding-right: 0px !important; padding-left: 0px !important; }');
 addGlobalStyle('div.tabLinks.forumsTabLinks { border: 0px !important; }');
 addGlobalStyle('ul.blockLinksList { margin-left: 0px !important; }');
-addGlobalStyle('ol#forums { background-color: #000 !important; border: 0px !important; padding: 1px !important; }');
+addGlobalStyle('ol#forums { background-color: #000000 !important; border: 0 !important; padding: 1px !important; }');
 addGlobalStyle('fieldset.breadcrumb { background: #688A9D; border: 1px solid #000000 !important; }');
 
 // login bar border #loginBar
@@ -35,8 +59,8 @@ addGlobalStyle('div#loginBar { border: 0px !important; }');
 addGlobalStyle('.avatar img { background: none; border: 0; }');
 
 // lower nav bar tabs ("Mark Forums Read" etc..)
-addGlobalStyle('.blockLinksList a { border-radius: 0; background-color: #688A9D !important; color: #FFFFFF !important; }');
-addGlobalStyle('.navTabs .navTab.selected .tabLinks a:hover, .navTabs .navTab.selected .tabLinks a:focus { text-shadow: none; background-color: #96291E !important; border: 1px solid #96291E; }');
+addGlobalStyle('.blockLinksList a { border-radius: 0; background-color: '+ dG +' !important; color: '+ lG +' !important; }');  // #688A9D
+addGlobalStyle('.navTabs .navTab.selected .tabLinks a:hover, .navTabs .navTab.selected .tabLinks a:focus { text-shadow: none; background-color: #000000 !important; border: 1px solid #000000; }');  //#96291E
 
 // breadcrumbs navigation
 addGlobalStyle('span.arrow { background: rgba(0, 0, 0, 0) url("styles/xenfoogle/xenforo/xenforo-ui-sprite.png") no-repeat -140px 0.1px !important; transform:rotate(270deg) !important; }');
@@ -45,14 +69,14 @@ addGlobalStyle('.crust>a.crumb { color: #FFFFFF !important; }');
 addGlobalStyle('.crust:last-child>a.crumb { color: #FFFFFF !important; }'); //#2C8DAE
 
 // search input and buttons
-addGlobalStyle('input#QuickSearchQuery { background-color: #2C2C2C !important; }');
+addGlobalStyle('input#QuickSearchQuery { background-color: '+ dG +' !important; }');
 addGlobalStyle('input#QuickSearchQuery:focus { background-image: none !important; }');
 addGlobalStyle('input[value="Search"] { background-color: #96291E !important; border: 1px solid #96291E !important; }');
 addGlobalStyle('a.moreOptions { background-color: #96291E !important; border: 1px solid #96291E !important; }');
 addGlobalStyle('a.NoPopupGadget { background-color: #96291E !important; border: 1px solid #96291E !important; }');
 
 // page description
-addGlobalStyle('p#pageDescription { color: #FFFFFF !important; }');
+addGlobalStyle('p#pageDescription { color: #777C80 !important; }');
 
 // change thread icon
 addGlobalStyle('span.nodeIcon { background-image: url("http://www.pixentral.com/pics/1EcJUwKESRgzSX9U1jxUr1ibIwnbXe.png") !important; }');
@@ -66,24 +90,24 @@ addGlobalStyle('a.feedIcon { background: url("http://creativity-online.com/asset
 // addGlobalStyle('div.mainContent { margin-right: 0px !important; }');
 
 // forum list background-color
-addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent { background-color: #2C2C2C !important; color: #FFFFFF !important; }');
+addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent { background-color: '+ dG +' !important; color: #FFFFFF !important; }');
 
 // change hover color for each forum in the list
 addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent:hover { background-color: #96291E !important; }');
 
 // Subforum title style
-addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent>div>h3>a { color: #FFFFFF !important; font-weight: 300; }');
+addGlobalStyle('div.nodeInfo.forumNodeInfo.primaryContent>div>h3>a { color: '+ lG +' !important; font-weight: 300; }');
 
 // "Discussions" & "Messages" strings color (counter text color under each sub-forum title)
-addGlobalStyle('div.nodeStats.pairsInline>dl>dt { color: #688A9D !important; }');
+addGlobalStyle('div.nodeStats.pairsInline>dl>dt { color: '+ gG +'; }');
 // "Sub-Forums"
-addGlobalStyle('span.dt { color: #688A9D !important; }');	//#278DAE
+addGlobalStyle('span.dt { color: '+ gG +' !important; }');	//#278DAE
 
 // color for the sidebar toggle button created by the nbr_sidebar.js script
 addGlobalStyle('#sidebarToggle { color: #278DAE; }');
 
 // Styles for linked forums (e.g. NBR Marketplace)
-addGlobalStyle('div.nodeInfo.linkNodeInfo { background-color: #2C2C2C !important;}');
+addGlobalStyle('div.nodeInfo.linkNodeInfo { background-color: '+ dG +' !important;}');
 addGlobalStyle('div.nodeInfo.linkNodeInfo>div>h3>a { color: #FFFFFF !important; }');
 
 // text color under linked forums, latest threads etc..
@@ -97,10 +121,13 @@ addGlobalStyle('#waindigoCopyrightNotice>div.pageContent>span.muted { color: #FF
 addGlobalStyle('div#copyright { color: #FFFFFF; }');
 
 // Latest thread container styles
-addGlobalStyle('.node .nodeLastPost { background-color: #EEEEEE; }');
-addGlobalStyle('span.lastThreadMeta abbr.DateTime, span.lastThreadMeta span.DateTime { color: #000000; }');
+addGlobalStyle('.node .nodeLastPost { background-color: '+ bK +'; }');
+addGlobalStyle('span.lastThreadMeta abbr.DateTime, span.lastThreadMeta span.DateTime { color: '+ gG +'; }');
 // No content message
-addGlobalStyle('span.noMessages { color: #000000; }');
+addGlobalStyle('span.noMessages { color: '+ bK +'; }');
+
+// Link hover style
+addGlobalStyle('a[href]:hover { text-decoration: underline; color: '+ lG +'; }');
 
 
 // change header logo and link to point to the forum's home page
@@ -111,13 +138,13 @@ hLogo.innerHTML = '<a href="http://forum.notebookreview.com"><img src="http://fo
 // titlebar background
 addGlobalStyle('.sidebar .section .primaryContent h3, .sidebar .section .secondaryContent h3, .profilePage .mast .section.infoBlock { background: #688A9D; }');
 // background
-addGlobalStyle('.sidebar .section .primaryContent, .sidebar .section .secondaryContent, .profilePage .mast .section.infoBlock { background: #2C2C2C; }');
+addGlobalStyle('.sidebar .section .primaryContent, .sidebar .section .secondaryContent, .profilePage .mast .section.infoBlock { background: '+ dG +'; }');
 
 // user widget
 addGlobalStyle('div.stats>dl.pairsJustified dt, div.stats>dl.pairsJustified dd { color: #FFFFFF; }');
 
 // Most Active Threads widget
-addGlobalStyle('.secondaryContent a { color: #688A9D; }');
+addGlobalStyle('.secondaryContent a { color: '+ lG +'; }');
 addGlobalStyle('div.userTitle abbr.DateTime { color: #FFFFFF; }');
 addGlobalStyle('.sidebar .avatarList .userTitle { color: #FFFFFF; }');
 
@@ -133,11 +160,26 @@ addGlobalStyle('.message .likesSummary { background: none !important; border: 1p
 addGlobalStyle('.userBanner.bannerRed { background: #008000; border: 1px solid #008000; border-radius: 0 !important; }');
 
 // message list
-addGlobalStyle('#messageList .message, .message .messageInfo { background-color: #2C2C2C; color: #FFFFFF; }');
+addGlobalStyle('#messageList .message, .message .messageInfo { background-color: '+ dG +'; color: #FFFFFF; }');
 // remove the "triangle next to posts"
 addGlobalStyle('.messageUserBlock .arrow { display: none; }');
 // message styles
-//addGlobalStyle('.message .messageInfo { background-color: #2C2C2C; color: #F80000; }');
+//addGlobalStyle('.message .messageInfo { background-color: '+ dG +'; color: #F80000; }');
+
+
+
+// hide user's avatar next to the reply area.
+addGlobalStyle('div.quickReply > div.messageUserInfo { display: none; }');
+// let the reply form fill its container
+addGlobalStyle('form#QuickReply { margin-left: 0; }');
+
+
+
+
+var uzr = document.getElementsByClassName("accountUsername")[0];
+    uzr.innerHTML = "Catalin!";
+    console.log(uzr);
+
 
 
 // change footer logo
