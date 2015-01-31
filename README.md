@@ -1,5 +1,5 @@
 # tampermonkey-TG
->Tampermonkey/Greasemonkey scripts for technology guide forums (forum.notebookreview.com etc.)
+**Tampermonkey/Greasemonkey scripts for technology guide forums (forum.notebookreview.com etc.)**
 
 #Scripts description:
 * ####[nbr_sidebar.js](https://github.com/katalin2003/tampermonkey-TG/blob/master/scripts/nbr_sidebar.js):
