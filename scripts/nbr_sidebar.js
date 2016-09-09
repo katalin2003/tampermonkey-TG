@@ -3,6 +3,7 @@
 // @author       katalin_2003
 // @version      1.7
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/nbr_sidebar.js
+// @updateURL    https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/nbr_sidebar.js
 // @description  show hide side menu on http://forum.notebookreview.com
 // @include      http://forum.notebookreview.com/*
 // @include      http://forum.tabletpcreview.com/*
