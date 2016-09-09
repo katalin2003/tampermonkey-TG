@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         nbr_sidebar.js
 // @author       katalin_2003
-// @version      1.6
+// @version      1.7
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/nbr_sidebar.js
 // @description  show hide side menu on http://forum.notebookreview.com
 // @include      http://forum.notebookreview.com/*
@@ -41,25 +41,27 @@ function insertAfter(referenceNode, newNode) {
 function toggle(obj) {
     //  var el = document.getElementById(obj);
     var el = document.getElementsByClassName(obj)[0],
-        mainContent = document.getElementsByClassName('mainContent')[0];
+        mainContent = document.getElementsByClassName('mainContent')[0],
+        elWidth,
+        mainContentWidth;
     if ( el.style.display != 'none' ) {
         el.style.display = 'none';
         sideTgl.innerHTML = '<<';
         mainContent.style.width = '100%';
-        
-        var elWidth = el.offsetWidth,
-            mainContentWidth = mainContent.offsetWidth;
+
+        elWidth = el.offsetWidth;
+        mainContentWidth = mainContent.offsetWidth;
         console.log('katalin_2003: sidebar hidden');
         console.log('katalin_2003: mainContent width is: ' + mainContentWidth + 'px');
     }
     else {
         el.style.display = '';
         sideTgl.innerHTML = '>>';
-        
-        var elWidth = el.offsetWidth,
-            mainContentWidth = mainContent.offsetWidth;
+
+        elWidth = el.offsetWidth;
+        mainContentWidth = mainContent.offsetWidth;
         mainContent.style.width = (mainContentWidth - elWidth-10) +'px';
-        
+
         console.log('katalin_2003: sidebar visible');
         console.log('katalin_2003: mainContent width is: ' + (mainContentWidth-elWidth-10) + 'px');
     }
@@ -90,14 +92,14 @@ sidebarToggle.setAttribute('title' , 'Toggle sidebar visibility');
 (function() {
     toggle('sidebar');
     console.log('hidden');
-    return false;  
+    return false;
 })();
 
 // Toggle sidebar's visibility on click
 sidebarToggle.onclick = function () {
     toggle('sidebar');
     return false;
-}
+};
 
 // remove "Latest" string in front of thread titles
 addStyle('span.lastThreadTitle > span { display:none; }');
