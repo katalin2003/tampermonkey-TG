@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         nbr_sidebar.js
 // @author       katalin_2003
-// @version      1.7
+// @version      1.7.1
 // @downloadURL  https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/nbr_sidebar.js
 // @updateURL    https://raw.githubusercontent.com/katalin2003/tampermonkey-TG/master/scripts/nbr_sidebar.js
 // @description  show hide side menu on http://forum.notebookreview.com
@@ -28,7 +28,7 @@ addStyle('* { font-family: sans-serif !important; }');
 
 // reduce the min-height of messages to gain some vertical space in the case of small messages.
 // or you can get the size of .messageUserInfo and use that value as the min-height for messages, though the former might not always have a fixed height for all users.
-addStyle('.messageContent { min-height: 2em !important; }');
+addStyle('.messageContent { min-height: 2.4em !important; }');
 
 // add the missing right border..OCD much :)
 addStyle('ol#forums { border-right: 1px solid #7B7B7B !important; }');
