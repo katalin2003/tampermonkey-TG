@@ -1,4 +1,7 @@
 # tampermonkey-TG
+
+**ARCHIVED since notebookreview.com and other TG sites are now dead**
+
 **Tampermonkey/Greasemonkey scripts for technology guide forums (forum.notebookreview.com etc.)**
 
 #Scripts description:
